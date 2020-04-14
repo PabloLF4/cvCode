@@ -1,0 +1,1 @@
+Creación dun pequena web co teu Curriculum Vitae na que utilices git nunha máquina virtual con Ubuntu. Debes crear o repositorio, e ir commiteando cada paso que des na construcción da web. Crea unha rama na que fagas un CSS algo diferente e logo xunta as ramas.
