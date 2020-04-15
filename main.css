@@ -1,0 +1,337 @@
+/*GLOBAL*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url(img/fondo.jpg);
+    background-attachment: fixed;
+    font: 1.2rem "Montserrat";
+    color: whitesmoke;
+}
+
+/*HEADER*/
+
+header{
+    height: 9vh;
+    background-color: rgba(00,00,00,.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 8em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.active{
+    transition: .5s ease-in;
+    background-color: rgba(00,00,00,1);
+}
+
+.animation{
+    transition: .5s ease-in;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    list-style: none;
+}
+
+.nav-element a, .contact a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.logo a{
+    font-size: 1.5em;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.logo a:hover, .nav-element a:hover{
+    color: orange;
+}
+
+.contact{
+    border: 2px solid orange;
+    border-radius: 8px;
+    padding: .5em;
+}
+
+.contact:hover{
+    background-color: rgba(255,245,157,.3);
+    cursor: pointer;
+}
+
+#boton, #barras{
+    display: none;
+}
+
+/*MAIN*/
+
+main{
+    margin-top: 12vh;
+}
+
+.title{
+    text-align: center;
+}
+
+.formacion-section, .experiencia-section{
+    padding-top: 5em;
+}
+
+.formacion-article, .experiencia-article{
+    position: relative;
+    margin: 50px auto;
+    width: 60%;
+    padding: 2em 0;
+}
+
+.formacion-article:before, .experiencia-article:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 85%;
+    background-color: whitesmoke;
+}
+
+.formacion-article ul, .experiencia-article ul{
+    list-style: none;
+}
+
+.formacion-element, .experiencia-element{
+    position: relative;
+    width: 50%;
+    padding: 1em 2em;
+}
+
+.left{
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.right{
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+.content{
+    padding-bottom: 1em;
+}
+
+.left:before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -8px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border: 2px solid whitesmoke;
+    border-radius: 50%;
+}
+
+.right:before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border: 2px solid whitesmoke;
+    border-radius: 50%;
+}
+
+.left .time{
+    position: absolute;
+    top: 20px;
+    right: -165px;
+}
+
+.right .time{
+    position: absolute;
+    top: 20px;
+    left: -165px;
+}
+
+.left .timeE{
+    position: absolute;
+    top: 20px;
+    right: -150px;
+}
+
+.right .timeE{
+    position: absolute;
+    top: 20px;
+    left: -150px;
+}
+
+.left .level{
+    position: absolute;
+    top: 20px;
+    right: -115px;
+}
+
+.clear{
+    clear: both;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: rgba(00,00,00,.7);
+    padding: 2em 0;
+}
+
+.contact-form{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+    overflow: hidden;
+}
+
+.contact-form-text{
+    font: 1.2rem "Montserrat";
+    color: whitesmoke;
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    border: none;
+    background-color: #111;
+    padding: 2em 2em;
+    outline: none;
+    transition: .5s;
+}
+
+.contact-form-text:focus{
+    box-shadow: 0 0 10px 4px orange;
+}
+
+textarea.contact-form-text{
+    resize: none;
+    height: 12em;
+}
+
+.contact-form-btn{
+    font: 1.2rem "Montserrat";
+    color: whitesmoke;
+    float: right;
+    border: 2px solid orange;
+    background: none;
+    padding: 1em 4em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.contact-form-btn:hover{
+    background-color: rgba(255,245,157,.3);     
+}
+
+.buttonCenter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/*RESPONSIVE*/
+
+@media(max-width: 1400px){
+    header{
+        padding: 1.5em 2em;
+    }
+
+    .nav-list{
+        width: 50vw;
+    }
+}
+
+@media(max-width: 1100px){
+    nav{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(00,00,00,.98);
+        transform: translateY(-100vh);
+    }
+
+    .nav-list{
+        margin-top: 2em;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #barras{
+        display: block;
+    }
+
+    #boton:checked + nav{
+        transition: .3s linear;
+        transform: translateY(9vh);
+    }
+    
+    #barras:hover{
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 700px){
+    body{
+        font-size: 1em;
+    }
+
+    .formacion-article, .experiencia-article{
+        width: 100%;
+    }
+
+    .formacion-article:before, .experiencia-article:before{
+        height: 90%;
+    }
+
+    .contact-form-btn, .contact-form-text{
+        font-size: 1em;
+    }
+    
+    .left .timeE, .left .time{
+        top: 17px;
+    }
+
+    .right .timeE, .right .time{
+        top: 17px;
+    }
+
+    .left .level{
+        right: -100px;
+        top: 17px;
+    }
+}
+
+@media(max-width: 450px){
+    .logo a{
+        font-size: 1.1em;
+    }
+}
